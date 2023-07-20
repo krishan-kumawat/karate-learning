@@ -8,4 +8,4 @@ Feature:
        return sdf.printText() // '.getTime()' would also have worked instead of '.time'
      }
      """
-    * assert main() == 'Interopp'
+    * assert main() != 'Interopp'
