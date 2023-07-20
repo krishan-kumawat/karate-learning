@@ -1,4 +1,4 @@
-package core.keyword.feature;
+package core.keyword.feature.url;
 
 import com.intuit.karate.junit5.Karate;
 
