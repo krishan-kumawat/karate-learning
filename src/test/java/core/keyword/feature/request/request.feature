@@ -46,4 +46,39 @@ Feature: request Keyword
       Then match karate.range(400, 401) contains responseStatus
 
 
+  Scenario: check response time
+    Given url basePath
+    And path 'users'
+    And path 'register'
+    When method post
+    * print responseTime
+    * assert responseTime < 3
 
+  Scenario: pass response to the service class
+    Given url basePath
+    And path 'users'
+    And path 'register'
+    When method post
+    Then status 400
+
+    * def printJson =
+    """
+      function (hello){
+        var Parser = Java.type('core.keyword.feature.request.services.ParseJson');
+        var parseData = new Parser();
+        parseData.printJson(hello);
+      }
+    """
+    * printJson("hello")
+
+
+  Scenario:
+    * def main =
+     """
+     function() {
+       var Demo = Java.type('javafiles.Demo');
+       var sdf = new Demo();
+       return sdf.printText() // '.getTime()' would also have worked instead of '.time'
+     }
+     """
+    * assert main() != 'Interopp'
