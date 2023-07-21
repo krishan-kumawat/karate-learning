@@ -25,8 +25,9 @@ Feature: url features
 
   Scenario: we can change url
     Given url basePath
-    And path customPath
-    And path 1
+#    And path customPath
+#    And path 1
+    And path customPath, 1
     And method get
     When status 200
     Then match response.id == 1
