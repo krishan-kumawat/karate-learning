@@ -21,14 +21,29 @@ Feature: request Keyword
     When method post
     Then status 400
     Then match response.message[0] == 'profile already exist'
+    And print responseStatus
+    Then assert responseStatus == 400 || responseStatus == 401
 
-    @ignore
+  @ignore
     Scenario: we can upload a image also (can send binary data)
       Given path 'upload'
       And request read('my-image.jpg')
       When method put
       Then status 200
 
+  @ignore
+    Scenario: check a range of status
+      Given path 'url'
+      * match [200, 201, 204] contains responseStatus
+      * assert responseStatus >= 200
+
+
+    Scenario: karate.range()
+      Given url basePath
+      And path 'users'
+      And path 'register'
+      When method post
+      Then match karate.range(400, 401) contains responseStatus
 
 
 
