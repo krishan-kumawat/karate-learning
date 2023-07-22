@@ -8,6 +8,7 @@ Feature: request Keyword
     And param name = "krishan"
     When method get
     Then status 404
+    * print response
     * print 'Request Url ', ScenarioEngine.get().getRequest().url
 
   Scenario: Multi-value params are also supported
