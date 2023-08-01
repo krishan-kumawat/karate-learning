@@ -28,4 +28,7 @@ Feature:
     * def len = result.response.length
     * match len == 10
 
+  Scenario:
+    * call read('varoverride.feature') { name: 'new' }
+
 

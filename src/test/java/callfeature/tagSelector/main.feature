@@ -7,7 +7,7 @@ Feature:
 
   Scenario: calling other scenario from same feature file
     * call read('@generateToken')
-#    * call generateToken  # can't call like this 
+#    * call generateToken  # can't call like this
 
 #    Note that you would typically want to use the @ignore tag for such cases.
   @generateToken @ignore
