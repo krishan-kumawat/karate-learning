@@ -7,3 +7,7 @@ Feature:
     And path 'greeting'
     When method get
     Then status 200
+
+  Scenario: print config files
+    * print 'myVarName ', myVarName
+
