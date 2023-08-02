@@ -8,7 +8,8 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    myVarName: 'someValue',
+    ENDPOINT: 'https://salesforce.com/'
   }
   if (env == 'dev') {
     // customize
