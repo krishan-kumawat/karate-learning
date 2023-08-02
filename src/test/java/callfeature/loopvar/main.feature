@@ -21,3 +21,4 @@ Feature: calling another feature file in a loop
 #    * match created[*].name == $kittens[*].name
 
   Scenario:
+    * print 'ENDPOINT ', ENDPOINT
