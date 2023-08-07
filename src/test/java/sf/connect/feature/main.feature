@@ -13,4 +13,3 @@ Feature:
     When def parameters = { soqlQuery: '#(queryObject)', environment: 'tz' }
     Then def queryResult = call query parameters
 
-    * call common

@@ -15,3 +15,13 @@ Feature:
     * match b.name.name == 'copy'
     * match a.name.name == 'inner'
 
+
+  Scenario: clone should be 'deep' and work even for nested data
+    Given url 'https://jsonplaceholder.typicode.com/users'
+    When method get
+    Then status 200
+    Then response $ = {}
+    * print 'res ', response
+    * response $
+    * print 'res ', $
+

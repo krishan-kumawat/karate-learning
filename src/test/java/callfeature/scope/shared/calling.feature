@@ -9,3 +9,9 @@ Feature: shared scoping
     * match a == '1'
     * match b == '2'
 
+
+  Scenario: The JS API allows you to do this, but this will not be Shared Scope
+    * karate.call('called.feature')
+#    * print a
+
+

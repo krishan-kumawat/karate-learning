@@ -1,0 +1,5 @@
+{
+  "attributes": "#object",
+  "Id": "#string",
+  "Username": "#string"
+}
